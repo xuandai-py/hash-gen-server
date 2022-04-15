@@ -32,7 +32,7 @@ app.post('/hash-input', async (req, res) => {
 
 app.post('/compare-input', async (req, res) => {
 	try {
-		const result = await bcrypt.compare(req.body.inputData, req.body.hashed);
+		const result = await bcrypt.compare(req.body.inputData, req.body.hashedData);
 		return res.status(200).json({ "result": result })
 	} catch (error) {
 		console.error(error);
