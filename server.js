@@ -4,15 +4,9 @@ const bcrypt = require('bcrypt')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 
-let port = 3333
-
-app.listen(port, () => {
-	console.log('Server is running on port: ', port)
-})
-
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
-app.use(cors({ origin: 'http://localhost:3001' }))
+app.use(cors())
 
 app.get('/guten', (req, res) => {
 	res.status(200).json('guten tag')
